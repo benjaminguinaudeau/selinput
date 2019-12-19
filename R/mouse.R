@@ -35,11 +35,8 @@ doc_mouse_move <- function(container, x, y){
   }
 
   dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; move({x}, {y})'"), intern = T)
-<<<<<<< HEAD
+
   return(invisible(container))
-=======
-  return(insvisible(container))
->>>>>>> c4ffd068ff7c88564714f79de75f5e9b3186ab4e
 }
 
 #' get_absolute_location
