@@ -1,13 +1,3 @@
-#' doc_init_pyautogui
-#' @export
-doc_init_pyautogui <- function(container){
-  dockeR::doc_exec(container, "sudo apt-get update")
-  dockeR::doc_exec(container, "sudo apt-get install -y python-pip")
-  dockeR::doc_exec(container, "python -m pip install pyautogui")
-  dockeR::doc_exec(container, "sudo apt-get install -y python-tk python-dev")
-  dockeR::doc_exec(container, "sudo apt-get install -y scrot")
-}
-
 #' doc_mouse_position
 #' @export
 doc_mouse_position <- function(container){
@@ -45,7 +35,11 @@ doc_mouse_move <- function(container, x, y){
   }
 
   dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; move({x}, {y})'"), intern = T)
+<<<<<<< HEAD
   return(invisible(container))
+=======
+  return(insvisible(container))
+>>>>>>> c4ffd068ff7c88564714f79de75f5e9b3186ab4e
 }
 
 #' get_absolute_location
