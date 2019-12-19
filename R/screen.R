@@ -19,4 +19,6 @@ doc_screenshot <- function(container, file = NULL, region = NULL){
   file <- nullify(file, "imageFilename = ")
   region <- nullify(region, "region = ")
   dockeR::doc_exec(container, glue::glue("sudo python -c \"from pyautogui import * ; screenshot({file} {region})\""))
+  return(invisible(container))
 }
+

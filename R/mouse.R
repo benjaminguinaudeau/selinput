@@ -11,6 +11,7 @@ doc_init_pyautogui <- function(container){
 #' doc_mouse_position
 #' @export
 doc_mouse_position <- function(container){
+  container <- dockeR::check_container_name(container)
   pos <- dockeR::doc_exec(container, "python -c 'from pyautogui import * ; print(position())'", intern = T)
   x <- as.numeric(stringr::str_extract(pos, "(?<=x=)\\d+"))
   y <- as.numeric(stringr::str_extract(pos, "(?<=y=)\\d+"))
@@ -21,7 +22,7 @@ doc_mouse_position <- function(container){
 #' doc_mouse_move_to
 #' @export
 doc_mouse_move_to <- function(container, x, y){
-
+  container <- dockeR::check_container_name(container)
   if(!is.null(x)){
     x <- sample(x, 1)
   }
@@ -29,11 +30,13 @@ doc_mouse_move_to <- function(container, x, y){
     y <- sample(y, 1)
   }
   dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; moveTo({x}, {y})'"), intern = T)
+  return(invisible(container))
 }
 
 #' doc_mouse_move
 #' @export
 doc_mouse_move <- function(container, x, y){
+  container <- dockeR::check_container_name(container)
   if(!is.null(x)){
     x <- sample(x, 1)
   }
@@ -42,6 +45,7 @@ doc_mouse_move <- function(container, x, y){
   }
 
   dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; move({x}, {y})'"), intern = T)
+  return(invisible(container))
 }
 
 #' get_absolute_location
@@ -74,7 +78,7 @@ doc_click <- function(container, x = NULL, y = NULL, button = "left"){
   y <- nullify(y, "y = ", ", ")
 
   dockeR::doc_exec(container_name = container, command = glue::glue("python -c 'from pyautogui import * ; click({x}{y}button = \"{button}\")'"))
-  return(insvisible(container))
+  return(invisible(container))
 }
 
 #' doc_click_pos
@@ -87,7 +91,7 @@ doc_click_pos <- function(container, x, y, tol_x = 10, tol_y = 10){
     pos <- doc_mouse_position("chrome") %>% dplyr::glimpse()
   }
   doc_click(container = "chrome")
-  return(insvisible(container))
+  return(invisible(container))
 }
 
 #' doc_scroll
@@ -95,7 +99,7 @@ doc_click_pos <- function(container, x, y, tol_x = 10, tol_y = 10){
 doc_scroll <- function(x){
   container <- dockeR::check_container_name(container)
   dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; scroll({x})\""))
-  return(insvisible(container))
+  return(invisible(container))
 }
 
 
