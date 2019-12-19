@@ -3,13 +3,30 @@ output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+# selinput <img src="man/figures/selinput_logo.jpeg" width="160px" align="right" />
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  eval = F,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
+)
+
+```
+
+```{r, echo = FALSE, results='asis', eval = T}
+
+library(badger)
+
+git_repo <- "benjaminguinaudeau/tidyweb"
+
+cat(
+  badge_lifecycle(),
+	badge_code_size(git_repo),
+	badge_last_commit(git_repo)
 )
 ```
 
@@ -19,3 +36,8 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 Selinput is a wrapper for the python API pyautogui, which allows to simulate input from a real mouse and keyboard in a docker container. 
+
+
+## Thanks
+
+A huge thank you to [Favstats](https://github.com/favstats) for designing each of the hex-stickers. 

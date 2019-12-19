@@ -1,3 +1,12 @@
+
+#' doc_type
+#' @export
+doc_type <- function(message, interval = NULL){
+  message <- nullify(message, "message = \'", "\', ")
+  interval <- nullify(interval, "interval = ", ", ")
+  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; typewrite({message} {interval})\""))
+}
+
 #' doc_press
 #' @export
 doc_press <- function (key) {

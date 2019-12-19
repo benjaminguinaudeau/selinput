@@ -9,3 +9,9 @@
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL
+
+#' nullify
+#' @export
+nullify <- function(x, pre = "x = ", suf = ", "){
+  ifelse(is.null(x), " ", paste0(pre, x, suf))
+}

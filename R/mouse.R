@@ -18,7 +18,6 @@ doc_mouse_position <- function(){
 }
 
 
-
 #' doc_mouse_moveTo
 #' @export
 doc_mouse_move_to <- function(x, y){
@@ -57,7 +56,7 @@ get_absolute_location <- function(chrome, elem){
 
 #' doc_mouse_click
 #' @export
-doc_mouse_click <- function(x = NULL, y = NULL, button = "left"){
+doc_click <- function(x = NULL, y = NULL, button = "left"){
   pos <- doc_mouse_position()
   if(!is.null(x)){
     x <- sample(x, 1)
@@ -76,13 +75,6 @@ doc_mouse_click <- function(x = NULL, y = NULL, button = "left"){
   dockeR::doc_exec("chrome", glue::glue("python -c 'from pyautogui import * ; click({x}{y}button = \"{button}\")'"))
 }
 
-#' doc_mouse_type
-#' @export
-doc_mouse_type <- function(message, interval = NULL){
-  message <- nullify(message, "message = \'", "\', ")
-  interval <- nullify(interval, "interval = ", ", ")
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; typewrite({message} {interval})\""))
-}
 
 #' doc_scroll
 #' @export
