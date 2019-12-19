@@ -2,6 +2,7 @@
 
 export("%>%")
 export(doc_click)
+export(doc_click_pos)
 export(doc_hot_keys)
 export(doc_init_pyautogui)
 export(doc_key_down)

@@ -4,7 +4,7 @@
 \alias{doc_locate_on_screen}
 \title{doc_locate_on_screen}
 \usage{
-doc_locate_on_screen(x)
+doc_locate_on_screen(container, x)
 }
 \description{
 doc_locate_on_screen

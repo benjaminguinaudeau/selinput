@@ -2,10 +2,10 @@
 % Please edit documentation in R/mouse.R
 \name{doc_click}
 \alias{doc_click}
-\title{doc_mouse_click}
+\title{doc_click}
 \usage{
-doc_click(x = NULL, y = NULL, button = "left")
+doc_click(container, x = NULL, y = NULL, button = "left")
 }
 \description{
-doc_mouse_click
+doc_click
 }

@@ -4,7 +4,7 @@
 \alias{doc_screenshot}
 \title{doc_screenshot}
 \usage{
-doc_screenshot(file = NULL, region = NULL)
+doc_screenshot(container, file = NULL, region = NULL)
 }
 \description{
 doc_screenshot

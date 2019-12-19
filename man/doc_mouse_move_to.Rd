@@ -2,10 +2,10 @@
 % Please edit documentation in R/mouse.R
 \name{doc_mouse_move_to}
 \alias{doc_mouse_move_to}
-\title{doc_mouse_moveTo}
+\title{doc_mouse_move_to}
 \usage{
-doc_mouse_move_to(x, y)
+doc_mouse_move_to(container, x, y)
 }
 \description{
-doc_mouse_moveTo
+doc_mouse_move_to
 }

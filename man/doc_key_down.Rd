@@ -4,7 +4,7 @@
 \alias{doc_key_down}
 \title{doc_key_down}
 \usage{
-doc_key_down(key)
+doc_key_down(container, key)
 }
 \description{
 doc_key_down

@@ -4,7 +4,7 @@
 \alias{doc_press}
 \title{doc_press}
 \usage{
-doc_press(key)
+doc_press(container, key)
 }
 \description{
 doc_press

@@ -4,7 +4,7 @@
 \alias{doc_mouse_move}
 \title{doc_mouse_move}
 \usage{
-doc_mouse_move(x, y)
+doc_mouse_move(container, x, y)
 }
 \description{
 doc_mouse_move

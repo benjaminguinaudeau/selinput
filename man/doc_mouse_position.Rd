@@ -4,7 +4,7 @@
 \alias{doc_mouse_position}
 \title{doc_mouse_position}
 \usage{
-doc_mouse_position()
+doc_mouse_position(container)
 }
 \description{
 doc_mouse_position

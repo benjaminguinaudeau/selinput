@@ -4,7 +4,7 @@
 \alias{doc_hot_keys}
 \title{doc_hot_keys}
 \usage{
-doc_hot_keys(key, interval = NULL)
+doc_hot_keys(container, key, interval = NULL)
 }
 \description{
 doc_hot_keys

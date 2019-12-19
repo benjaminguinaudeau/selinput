@@ -4,7 +4,7 @@
 \alias{doc_type}
 \title{doc_type}
 \usage{
-doc_type(message, interval = NULL)
+doc_type(container, message, interval = NULL)
 }
 \description{
 doc_type

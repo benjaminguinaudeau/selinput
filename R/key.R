@@ -1,22 +1,28 @@
 
 #' doc_type
 #' @export
-doc_type <- function(message, interval = NULL){
+doc_type <- function(container, message, interval = NULL){
+  container <- dockeR::check_container_name(container)
   message <- nullify(message, "message = \'", "\', ")
   interval <- nullify(interval, "interval = ", ", ")
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; typewrite({message} {interval})\""))
+  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; typewrite({message} {interval})\""))
+  return(insvisible(container))
 }
 
 #' doc_press
 #' @export
-doc_press <- function (key) {
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; press('{key}' )\""))
+doc_press <- function (container, key) {
+  container <- dockeR::check_container_name(container)
+  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; press('{key}' )\""))
+  return(insvisible(container))
 }
 
 #' doc_hot_keys
 #' @export
-doc_hot_keys <- function (key, interval = NULL){
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; hotkey('{key}')\""))
+doc_hot_keys <- function (container, key, interval = NULL){
+  container <- dockeR::check_container_name(container)
+  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; hotkey('{key}')\""))
+  return(insvisible(container))
 }
 
 #' hot_keys
@@ -47,12 +53,16 @@ hot_keys <- list('\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
 
 #' doc_key_up
 #' @export
-doc_key_up <- function (key){
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; keyUp('{key}')\""))
+doc_key_up <- function (container, key){
+  container <- dockeR::check_container_name(container)
+  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; keyUp('{key}')\""))
+  return(insvisible(container))
 }
 
 #' doc_key_down
 #' @export
-doc_key_down <- function (key){
-  dockeR::doc_exec("chrome", glue::glue("python -c \"from pyautogui import * ; keyDown('{key}')\""))
+doc_key_down <- function (container, key){
+  container <- dockeR::check_container_name(container)
+  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; keyDown('{key}')\""))
+  return(insvisible(container))
 }
