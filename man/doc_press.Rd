@@ -6,6 +6,11 @@
 \usage{
 doc_press(container, key)
 }
+\arguments{
+\item{container}{specify the container you wish to perform the action in}
+
+\item{key}{press a key}
+}
 \description{
-doc_press
+Press a key on your keyboard
 }

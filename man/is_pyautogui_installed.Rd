@@ -6,6 +6,9 @@
 \usage{
 is_pyautogui_installed(container)
 }
+\arguments{
+\item{container}{specify the container you wish to perform the action in}
+}
 \description{
 is_pyautogui_installed
 }
