@@ -1,5 +1,10 @@
 
 #' doc_type
+#' @description Type a (series of) text on your keyboard
+#' @param container specify the container you wish to perform the action in
+#' @param message specify which text should be typed
+#' @param interval #TODO: what is this?
+#' 
 #' @export
 doc_type <- function(container, message, interval = NULL){
   container <- dockeR::check_container_name(container)
@@ -10,6 +15,10 @@ doc_type <- function(container, message, interval = NULL){
 }
 
 #' doc_press
+#' @description Press a key on your keyboard
+#' @param container specify the container you wish to perform the action in
+#' @param key press a key
+#' 
 #' @export
 doc_press <- function (container, key) {
   container <- dockeR::check_container_name(container)
@@ -18,6 +27,11 @@ doc_press <- function (container, key) {
 }
 
 #' doc_hot_keys
+#' @description Press a hot key on your keyboard
+#' @param container specify the container you wish to perform the action in
+#' @param key press a key
+#' @param interval #TODO: what is this?
+#' 
 #' @export
 doc_hot_keys <- function (container, key, interval = NULL){
   container <- dockeR::check_container_name(container)
@@ -26,6 +40,7 @@ doc_hot_keys <- function (container, key, interval = NULL){
 }
 
 #' hot_keys
+#' @description list of hotkeys
 #' @export
 hot_keys <- list('\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
                     ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7',
@@ -51,6 +66,7 @@ hot_keys <- list('\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
                     'command', 'option', 'optionleft', 'optionright') %>%
   purrr::set_names(.)
 
+
 #' doc_key_up
 #' @export
 doc_key_up <- function (container, key){
@@ -65,4 +81,21 @@ doc_key_down <- function (container, key){
   container <- dockeR::check_container_name(container)
   dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; keyDown('{key}')\""))
   return(invisible(container))
+}
+
+#' doc_press_tabs
+#' @description Send several tabs (simplifies going through a website)
+#' @param container specify the container you wish to perform action in
+#' @param n how often should the tab button be clicked
+#' 
+#' @export
+doc_press_tabs <- function(container, n) {
+  
+  container <- dockeR::check_container_name(container)
+  
+  1:n %>% 
+    purrr::walk(~{doc_hot_keys(container, hot_keys$tab)})
+  
+  return(invisible(container))
+  
 }

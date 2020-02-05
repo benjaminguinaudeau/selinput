@@ -6,6 +6,13 @@
 \usage{
 doc_type(container, message, interval = NULL)
 }
+\arguments{
+\item{container}{specify the container you wish to perform the action in}
+
+\item{message}{specify which text should be typed}
+
+\item{interval}{#TODO: what is this?}
+}
 \description{
-doc_type
+Type a (series of) text on your keyboard
 }
