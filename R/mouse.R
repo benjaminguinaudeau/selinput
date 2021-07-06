@@ -2,7 +2,7 @@
 #' @export
 doc_mouse_position <- function(container){
   container <- dockeR::check_container_name(container)
-  pos <- dockeR::doc_exec(container, "python -c 'from pyautogui import * ; print(position())'", intern = T)
+  pos <- dockeR::doc_exec(container, "python3 -c 'from pyautogui import * ; print(position())'", intern = T)
   x <- as.numeric(stringr::str_extract(pos, "(?<=x=)\\d+"))
   y <- as.numeric(stringr::str_extract(pos, "(?<=y=)\\d+"))
   return(tibble::tibble(x, y))
@@ -19,7 +19,7 @@ doc_mouse_move_to <- function(container, x, y){
   if(!is.null(y)){
     y <- sample(y, 1)
   }
-  dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; moveTo({x}, {y})'"), intern = T)
+  dockeR::doc_exec(container, glue::glue("python3 -c 'from pyautogui import * ; moveTo({x}, {y})'"), intern = T)
   return(invisible(container))
 }
 
@@ -34,7 +34,7 @@ doc_mouse_move <- function(container, x, y){
     y <- sample(y, 1)
   }
 
-  dockeR::doc_exec(container, glue::glue("python -c 'from pyautogui import * ; move({x}, {y})'"), intern = T)
+  dockeR::doc_exec(container, glue::glue("python3 -c 'from pyautogui import * ; move({x}, {y})'"), intern = T)
 
   return(invisible(container))
 }
@@ -68,7 +68,7 @@ doc_click <- function(container, x = NULL, y = NULL, button = "left"){
   x <- nullify(x, "x = ", ", ")
   y <- nullify(y, "y = ", ", ")
 
-  dockeR::doc_exec(container_name = container, command = glue::glue("python -c 'from pyautogui import * ; click({x}{y}button = \"{button}\")'"))
+  dockeR::doc_exec(container_name = container, command = glue::glue("python3 -c 'from pyautogui import * ; click({x}{y}button = \"{button}\")'"))
   return(invisible(container))
 }
 
@@ -89,14 +89,14 @@ doc_click_pos <- function(container, x, y, tol_x = 10, tol_y = 10){
 #' @export
 doc_scroll <- function(x){
   container <- dockeR::check_container_name(container)
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; scroll({x})\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; scroll({x})\""))
   return(invisible(container))
 }
 
 
 
 # doc_mouse_display <- function(message, interval = NULL){
-#   doc_exec("chrome", glue::glue("sudo python -c \"from pyautogui import * ; displayMousePosition()\""))
+#   doc_exec("chrome", glue::glue("sudo python3 -c \"from pyautogui import * ; displayMousePosition()\""))
 # }
 
 

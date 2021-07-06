@@ -32,9 +32,9 @@ doc_init_pyautogui <- function(container){
   if(!is_pyautogui_installed(container_name)){
     message("Installing pyautogui library")
     dockeR::doc_exec(container_name, "sudo apt-get update")
-    dockeR::doc_exec(container_name, "sudo apt-get install -y python-pip")
-    dockeR::doc_exec(container_name, "python -m pip install pyautogui")
-    dockeR::doc_exec(container_name, "sudo apt-get install -y python-tk python-dev")
+    dockeR::doc_exec(container_name, "sudo apt-get install -y python3-pip")
+    dockeR::doc_exec(container_name, "python3 -m pip install pyautogui")
+    dockeR::doc_exec(container_name, "sudo apt-get install -y python3-tk python3-dev")
     dockeR::doc_exec(container_name, "sudo apt-get install -y scrot")
     message("Pyautogui was successfully installed")
   }

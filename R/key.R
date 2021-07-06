@@ -5,7 +5,7 @@ doc_type <- function(container, message, interval = NULL){
   container <- dockeR::check_container_name(container)
   message <- nullify(message, "message = \'", "\', ")
   interval <- nullify(interval, "interval = ", ", ")
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; typewrite({message} {interval})\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; typewrite({message} {interval})\""))
   return(invisible(container))
 }
 
@@ -13,7 +13,7 @@ doc_type <- function(container, message, interval = NULL){
 #' @export
 doc_press <- function (container, key) {
   container <- dockeR::check_container_name(container)
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; press('{key}' )\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; press('{key}' )\""))
   return(invisible(container))
 }
 
@@ -21,7 +21,7 @@ doc_press <- function (container, key) {
 #' @export
 doc_hot_keys <- function (container, key, interval = NULL){
   container <- dockeR::check_container_name(container)
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; hotkey('{key}')\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; hotkey('{key}')\""))
   return(invisible(container))
 }
 
@@ -55,7 +55,7 @@ hot_keys <- list('\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
 #' @export
 doc_key_up <- function (container, key){
   container <- dockeR::check_container_name(container)
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; keyUp('{key}')\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; keyUp('{key}')\""))
   return(invisible(container))
 }
 
@@ -63,6 +63,6 @@ doc_key_up <- function (container, key){
 #' @export
 doc_key_down <- function (container, key){
   container <- dockeR::check_container_name(container)
-  dockeR::doc_exec(container, glue::glue("python -c \"from pyautogui import * ; keyDown('{key}')\""))
+  dockeR::doc_exec(container, glue::glue("python3 -c \"from pyautogui import * ; keyDown('{key}')\""))
   return(invisible(container))
 }
