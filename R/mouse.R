@@ -5,6 +5,7 @@ doc_mouse_position <- function(container){
   pos <- dockeR::doc_exec(container, "python3 -c 'from pyautogui import * ; print(position())'", intern = T)
   x <- as.numeric(stringr::str_extract(pos, "(?<=x=)\\d+"))
   y <- as.numeric(stringr::str_extract(pos, "(?<=y=)\\d+"))
+  
   return(tibble::tibble(x, y))
 }
 

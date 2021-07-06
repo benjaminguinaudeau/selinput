@@ -6,6 +6,13 @@
 \usage{
 doc_hot_keys(container, key, interval = NULL)
 }
+\arguments{
+\item{container}{specify the container you wish to perform the action in}
+
+\item{key}{press a key}
+
+\item{interval}{#TODO: what is this?}
+}
 \description{
-doc_hot_keys
+Press a hot key on your keyboard
 }

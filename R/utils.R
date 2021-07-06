@@ -17,6 +17,8 @@ nullify <- function(x, pre = "x = ", suf = ", "){
 }
 
 #' is_pyautogui_installed
+#' @describtion check if pyautogui is installed in a container
+#' @param container specify the container you wish to perform the action in
 #' @export
 is_pyautogui_installed <- function(container){
   container %>%
@@ -26,6 +28,8 @@ is_pyautogui_installed <- function(container){
 }
 
 #' doc_init_pyautogui
+#' @describtion install pyautogui in a container
+#' @param container specify the container you wish to perform the action in
 #' @export
 doc_init_pyautogui <- function(container){
   container_name <- dockeR::check_container_name(container)

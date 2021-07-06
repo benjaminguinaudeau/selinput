@@ -9,6 +9,6 @@
 hot_keys
 }
 \description{
-hot_keys
+list of hotkeys
 }
 \keyword{datasets}
